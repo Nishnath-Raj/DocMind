@@ -479,3 +479,22 @@ GitHub: https://github.com/Nishnath-Raj/DocMind
 ## 📄 License
 
 This project was created for technical assessment and demonstration purposes.
+
+
+
+
+
+## Approach
+
+DocMind is designed as a full-stack document analysis application with a React and TypeScript frontend communicating with a FastAPI backend through REST APIs.
+
+For document processing, the backend accepts both PDF and image files. PDFs are first processed using PyMuPDF to extract machine-readable text while preserving the document's structure as much as practical. When a PDF contains little or no extractable text, the application uses OCR as a fallback for scanned documents. Image uploads are processed through OCR to convert their contents into usable text.
+
+The extracted text is then passed to the AI analysis layer using the Groq API. Users can select short, medium, or long summaries, and the system generates structured results containing the summary, key points, main ideas, topics, and improvement suggestions.
+
+The frontend focuses on a simple, responsive upload and results experience, including drag-and-drop support, loading states, validation, and user-friendly error handling.
+
+For deployment, the frontend and backend are hosted separately on Render. Environment variables are used for production configuration and API credentials, while CORS is configured to securely allow communication between the deployed frontend and backend.
+
+The project is organized into separate frontend and backend components to keep responsibilities clear, maintainable, and easy to extend.
+
