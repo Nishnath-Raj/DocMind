@@ -18,8 +18,12 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        # Local development
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+
+        # Production frontend
+        "https://docmind-frontend-y8gt.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
